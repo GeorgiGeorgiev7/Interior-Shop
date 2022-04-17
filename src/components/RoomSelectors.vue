@@ -71,6 +71,7 @@ export default {
   color: white;
   box-shadow: 0 0 10px 4px black;
   text-shadow: 3px 3px black;
+  cursor: pointer;
 }
 
 option {

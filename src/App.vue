@@ -1,7 +1,7 @@
 <template>
   <div class="app">
-    <div class="background" />
-    <the-heading />
+    <div id="background" />
+    <the-heading id="the-heading" />
     <the-room />
     <the-footer />
   </div>
@@ -25,7 +25,7 @@ body {
   cursor: default;
 }
 
-.background {
+#background {
   position: absolute;
   top: 0;
   left: 0;
@@ -38,5 +38,11 @@ body {
   background-repeat: no-repeat;
   opacity: 0.15;
   overflow: hidden;
+}
+
+@media only screen and (max-height: 652px) {
+  #the-heading {
+    display: none;
+  }
 }
 </style>

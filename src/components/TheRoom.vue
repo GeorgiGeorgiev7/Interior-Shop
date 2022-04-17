@@ -1,5 +1,6 @@
 <template>
   <div class="room">
+    <room-measurements class="room-measurements" />
     <room-image class="room-image" :roomImageUrl="roomImageUrl" />
     <room-selectors @selected="changeImage" class="room-selectors" />
   </div>
@@ -8,9 +9,10 @@
 <script>
 import RoomImage from "./RoomImage.vue";
 import RoomSelectors from "./RoomSelectors.vue";
+import RoomMeasurements from "./RoomMeasurements.vue";
 
 export default {
-  components: { RoomImage, RoomSelectors },
+  components: { RoomImage, RoomSelectors, RoomMeasurements },
   data() {
     return {
       roomImageUrl: "base_room",
@@ -36,11 +38,11 @@ export default {
 <style scoped>
 .room-image {
   position: absolute;
-  top: 50%;
+  top: 51%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
   width: 40rem;
-  max-width: 85vw;
+  max-width: 82vw;
   overflow: hidden;
   border-radius: 30px;
   box-shadow: 0 0 40px 5px black;
@@ -62,5 +64,42 @@ export default {
   align-items: center;
   justify-content: space-evenly;
   height: 8rem;
+}
+
+.room-measurements {
+  position: absolute;
+  top: 27%;
+  left: 50%;
+  width: 35rem;
+  max-width: 80vw;
+  transform: translateX(-50%) translateY(-50%);
+  height: 5rem;
+}
+
+@media only screen and (max-width: 525px) {
+  .room-measurements {
+    height: 8rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .room-measurements {
+    max-width: 90vw;
+  }
+}
+
+@media only screen and (max-height: 652px) {
+  .room-image {
+    top: 56%;
+    width: 15rem;
+  }
+
+  .room-measurements {
+    top: 20%;
+  }
+
+  .room-selectors {
+    display: none;
+  }
 }
 </style>
